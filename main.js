@@ -1,19 +1,4 @@
-/* 
-1) Création d'un tableau avec des phrases dedans
 
-2) Création d'une fonction qui lance un nombre random
-	sur la base de la longueur du tableau.
-
-3) Création d'une fonction qui mets une des phrase du tableau
-	dans la balise p au click sur le bouton.
-	Le chiffre random sert d'index pour la tableau.
-
-4) Création d'un écouteur d'evenement qui va lancer la fonction random
-	qui elle même lance la fonction text.
-
-5) Changement de la couleur des phrases au click, même étapes que pour 
-	le tableau des phrases.
-*/
 window.onload = function(){
 	var phrases = ['Alice au pays des merveilles : Et la reine répondit: «Nous courons pour rester à la même place.»',
 					"Albert Einstein : Il n'existe que deux choses infinies, l'univers et la bêtise humaine... mais pour l'univers, je n'ai pas de certitude absolue",
@@ -34,33 +19,26 @@ window.onload = function(){
 					"Gustave Parking : Des fois, il vaut mieux vaut ne rien dire et passer pour un con que de l'ouvrir et ne laisser aucun doute à ce sujet.",
 					"Aristote:L'ignorant affirme, le savant doute, le sage réfléchit"];
 	var color = ['#000','#333','#17ca95','#555','#7f8bfd','#2d3692','#ccc','#309251','#ca8717','#086327',];
-	console.log(phrases.length);
-	console.log(color.length);
-
+	
+	//console.log(phrases.length);
+	//console.log(color.length);
 	//var random = phrases[Math.floor(Math.random()*phrases.length)];
 	//console.log(random);
-
 	//var colorrandom = color[Math.floor(Math.random()*color.length)]
-
 	//console.log(colorrandom);
-
 	//var selecteur = document.querySelector('#conteneur > p').innerHTML= random;
 	//console.log(selecteur);
 
 	var btn = document.querySelector('#conteneur > button');
-	console.log(btn);
+	//console.log(btn);
 
-
+	// ******** CLICK FUNCTION - START ******** //
+	
 	btn.addEventListener("click",function(){
 
-		var random = phrases[Math.floor(Math.random()*phrases.length)];
-		var selecteur = document.querySelector('#conteneur > p').innerHTML= random;
-		var colorrandom = color[Math.floor(Math.random()*color.length)];
-		var selecteur = document.querySelector('#conteneur > p').style.color= colorrandom;
-
+		var randomPhrases = phrases[Math.floor(Math.random()*phrases.length)];
+		var selecteur = document.querySelector('#conteneur > p').innerHTML= randomPhrases;
+		var randomColor = color[Math.floor(Math.random()*color.length)];
+		var selecteur = document.querySelector('#conteneur > p').style.color= randomColor;
 	});
-
-
-
-
 };
